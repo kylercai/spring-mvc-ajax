@@ -5,7 +5,7 @@
 <html>
   <head>
     <title>Spring MVC - Ajax</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <style>
     	body { background-color: #eee; font: helvetica; }
     	#container { width: 500px; background-color: #fff; margin: 30px auto; padding: 30px; border-radius: 5px; box-shadow: 5px; }
