@@ -19,6 +19,7 @@
   **docker  tag  aks-api-demo:v1  kcai74/aks-api-demo:v1**<br>
   **docker  push  kcai74/aks-api-demo:v1**<br>
   等待docker push操作完成，把docker镜像推送到容器镜像仓库<br>
+  Tip: 将"kcai74"替换为您相应的ID
 	
 # 3.向AKS集群部署。首先使用kubectl命令，检查确保本地已连接到Azure上的AKS cluster<br>
   在aks-api-demo.yml所在的目录下运行：<br>
