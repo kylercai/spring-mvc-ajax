@@ -10,8 +10,8 @@
   `docker build -t aks-api-demo:v1 .`<br>
   命令结束后，使用docker images命令，将可查看到本地新创建的 aks-api-demo:v1 docker镜像，例如：<br>
   λ docker images<br>
-	REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE<br>
-	aks-api-demo                            v1                  d566bc710b34        About an hour ago   471MB
+		REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE<br>
+		aks-api-demo                            v1                  d566bc710b34        About an hour ago   471MB
 
 	修改此docker镜像tag，之后将其推送到docker hub或其它可访问的容器镜像库，例如：<br>
 	`λ docker tag aks-api-demo:v1 kcai74/aks-api-demo:v1`<br>
@@ -24,12 +24,12 @@
   
   之后运行命令 `kubectl get service aks-api-demo --watch`，等待service aks-api-demo的external IP成功获得，例如：<br>
   `λ kubectl get service aks-api-demo --watch`<br>
-	NAME           TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE<br>
-	aks-api-demo   LoadBalancer   10.0.46.126   <pending>     80:32327/TCP   17s<br>
-	aks-api-demo   LoadBalancer   10.0.46.126   40.73.17.217   80:32327/TCP   56s
+		NAME           TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE<br>
+		aks-api-demo   LoadBalancer   10.0.46.126   <pending>     80:32327/TCP   17s<br>
+		aks-api-demo   LoadBalancer   10.0.46.126   40.73.17.217   80:32327/TCP   56s
 
   按Ctrl-C退出命令，打开浏览器，输入地址 40.73.17.217/spring-mvc-ajax/，查看到以下UI:<br>
-  ![](https://github.com/kylercai/spring-mvc-ajax/edit/master/UI.jpg)
+  ![](https://github.com/kylercai/spring-mvc-ajax/UI.jpg)
   在UI中点击：<br>
   “Get Random Person”: 调用REST API GET /api/person/random<br>
   “Get Person By ID”: 调用REST API GET /api/person/id/{id}<br>
