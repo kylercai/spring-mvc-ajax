@@ -13,8 +13,8 @@
   命令结束后，使用docker images命令，将可查看到本地新创建的 aks-api-demo:v1 docker镜像，例如：<br>
    docker images<br>
 ```
-	REPOSITORY         TAG           IMAGE ID            CREATED             SIZE<br>
-  	aks-api-demo       v1            d566bc710b34        About an hour ago   471MB<br>
+	REPOSITORY         TAG           IMAGE ID            CREATED             SIZE
+  	aks-api-demo       v1            d566bc710b34        About an hour ago   471MB
 ```
   
   修改此docker镜像tag，之后将其推送到docker hub或其它可访问的容器镜像库，例如：<br>
@@ -32,8 +32,8 @@
   之后运行命令 `kubectl get service aks-api-demo --watch`，等待service aks-api-demo的external IP成功获得，例如：<br>
   **kubectl  get  service  aks-api-demo  --watch**<br>
 ```
-	NAME           TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE<br>
-  	aks-api-demo   LoadBalancer   10.0.46.126   <pending>     80:32327/TCP   17s<br>
+	NAME           TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
+  	aks-api-demo   LoadBalancer   10.0.46.126   <pending>     80:32327/TCP   17s
   	aks-api-demo   LoadBalancer   10.0.46.126   40.73.17.217   80:32327/TCP   56s
 ```
 
