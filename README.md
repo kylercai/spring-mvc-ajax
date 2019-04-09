@@ -11,8 +11,9 @@
   在项目的Dockerfile所在目录下运行：<br>
   **docker  build  -t  aks-api-demo:v1  .**<br>
   命令结束后，使用docker images命令，将可查看到本地新创建的 aks-api-demo:v1 docker镜像，例如：<br>
-   docker images<br>
 ```
+  docker images
+
 	REPOSITORY         TAG           IMAGE ID            CREATED             SIZE
   	aks-api-demo       v1            d566bc710b34        About an hour ago   471MB
 ```
@@ -29,9 +30,11 @@
   确保连接正确后，在aks-api-demo.yml所在的目录下运行：<br>
   **kubectl  create  -f  aks-api-demo.yml**
   
-  之后运行命令 `kubectl get service aks-api-demo --watch`，等待service aks-api-demo的external IP成功获得，例如：<br>
-  **kubectl  get  service  aks-api-demo  --watch**<br>
+  之后运行命令 **kubectl get service aks-api-demo --watch**，等待service aks-api-demo的external IP成功获得，例如：<br>
+  
 ```
+  kubectl  get  service  aks-api-demo  --watch
+
 	NAME           TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
   	aks-api-demo   LoadBalancer   10.0.46.126   <pending>     80:32327/TCP   17s
   	aks-api-demo   LoadBalancer   10.0.46.126   40.73.17.217   80:32327/TCP   56s
