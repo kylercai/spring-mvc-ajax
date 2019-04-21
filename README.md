@@ -19,13 +19,13 @@
 ```
   
   修改此docker镜像tag，之后将其推送到docker hub（以下例子中将"kcai74"替换为相应的docker ID）：<br>
-  **docker  tag  aks-api-demo:v1  kcai74/aks-api-demo:v1**<br>
-  **docker  push  kcai74/aks-api-demo:v1**<br>
+  **docker  tag  aks-api-demo:v1  kcai74/aks-api-demo:v1.1**<br>
+  **docker  push  kcai74/aks-api-demo:v1.1**<br>
   
   或将镜像推送至Azure Container Registry，例如在Azure上的ACR名字为ckacr001（替换为相应的ACR name）：<br>
-  **az acr show -n ckacr001，在结果中记录loginServer的值，例如**ckacr001.azurecr.cn** <br>
-  **docker  tag  aks-api-demo:v1  ckacr001.azurecr.cn/aks-api-demo:v1**<br>
-  **docker  push  ckacr001.azurecr.cn/aks-api-demo:v1**<br>
+  **az acr show -n ckacr001**，在结果中记录loginServer的值，例如**ckacr001.azurecr.cn** <br>
+  **docker  tag  aks-api-demo:v1  ckacr001.azurecr.cn/aks-api-demo:v2**<br>
+  **docker  push  ckacr001.azurecr.cn/aks-api-demo:v2**<br>
   
   
   等待docker push操作完成，把docker镜像推送到容器镜像仓库<br>
@@ -49,7 +49,7 @@
   	aks-api-demo   LoadBalancer   10.0.46.126   40.73.28.77   80:32327/TCP   56s
 ```
 
-  按Ctrl-C退出命令，打开浏览器，输入地址 40.73.17.217/，查看到以下UI:<br>
+  按Ctrl-C退出命令，打开浏览器，输入地址 40.73.28.77/，查看到以下UI:<br>
   ![](https://github.com/kylercai/spring-mvc-ajax/blob/master/UI.jpg)
   在UI中点击：<br>
   * “Get Random Person”: 调用REST API GET /api/person/random<br>
