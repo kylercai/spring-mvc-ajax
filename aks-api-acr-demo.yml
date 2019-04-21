@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: aks-api-demo
-        image: kcai74/aks-api-demo:v1.1
+        image: ckacr001.azurecr.cn/aks-api-demo:v2
         ports:
         - containerPort: 8080
 ---

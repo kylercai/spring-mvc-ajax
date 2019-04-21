@@ -18,17 +18,26 @@
   	aks-api-demo       v1            d566bc710b34        About an hour ago   471MB
 ```
   
-  修改此docker镜像tag，之后将其推送到docker hub或其它可访问的容器镜像库，例如：<br>
+  修改此docker镜像tag，之后将其推送到docker hub（以下例子中将"kcai74"替换为相应的docker ID）：<br>
   **docker  tag  aks-api-demo:v1  kcai74/aks-api-demo:v1**<br>
   **docker  push  kcai74/aks-api-demo:v1**<br>
+  
+  或将镜像推送至Azure Container Registry，例如在Azure上的ACR名字为ckacr001（替换为相应的ACR name）：<br>
+  **az acr show -n ckacr001，在结果中记录loginServer的值，例如**ckacr001.azurecr.cn** <br>
+  **docker  tag  aks-api-demo:v1  ckacr001.azurecr.cn/aks-api-demo:v1**<br>
+  **docker  push  ckacr001.azurecr.cn/aks-api-demo:v1**<br>
+  
+  
   等待docker push操作完成，把docker镜像推送到容器镜像仓库<br>
-  Tip: 将"kcai74"替换为您相应的ID
 	
 ### 3.向AKS集群部署。<br>
   首先使用kubectl命令，检查确保本地已连接到Azure上的AKS cluster。**kubectl cluster-info**<br>
   
   确保连接正确后，在aks-api-demo.yml所在的目录下运行：<br>
-  **kubectl  create  -f  aks-api-demo.yml**
+  **kubectl  create  -f  aks-api-demo.yml** （使用docker hub中镜像）<br>
+  或<br>
+  **kubectl  create  -f  aks-api-acr-demo.yml** （使用acr中镜像）<br>
+  
   
   之后运行命令 **kubectl get service aks-api-demo --watch**，等待service aks-api-demo的external IP成功获得，例如：<br>
   
@@ -37,10 +46,10 @@
 
 	NAME           TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
   	aks-api-demo   LoadBalancer   10.0.46.126   <pending>     80:32327/TCP   17s
-  	aks-api-demo   LoadBalancer   10.0.46.126   40.73.17.217   80:32327/TCP   56s
+  	aks-api-demo   LoadBalancer   10.0.46.126   40.73.28.77   80:32327/TCP   56s
 ```
 
-  按Ctrl-C退出命令，打开浏览器，输入地址 40.73.17.217/spring-mvc-ajax/，查看到以下UI:<br>
+  按Ctrl-C退出命令，打开浏览器，输入地址 40.73.17.217/，查看到以下UI:<br>
   ![](https://github.com/kylercai/spring-mvc-ajax/blob/master/UI.jpg)
   在UI中点击：<br>
   * “Get Random Person”: 调用REST API GET /api/person/random<br>
