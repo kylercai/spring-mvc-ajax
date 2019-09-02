@@ -4,7 +4,7 @@ apply plugin: 'maven-publish'
 
 repositories {
     maven {
-        url 'https://pkgs.dev.azure.com/kylercai/_packaging/vanke/maven/v1'
+        url 'https://pkgs.dev.azure.com/kylercai/_packaging/testtemp/maven/v1'
         credentials {
             username "AZURE_ARTIFACTS"
             password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "${azureArtifactsGradleAccessToken}"
@@ -25,7 +25,7 @@ dependencies {
 publishing {
     repositories {
         maven {
-			url 'https://pkgs.dev.azure.com/kylercai/_packaging/vanke/maven/v1'
+			url 'https://pkgs.dev.azure.com/kylercai/_packaging/testtemp/maven/v1'
 			credentials {
 				username "AZURE_ARTIFACTS"
 				password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "${azureArtifactsGradleAccessToken}"
