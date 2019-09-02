@@ -4,7 +4,7 @@ apply plugin: 'maven-publish'
 
 repositories {
     maven {
-        url 'https://pkgs.dev.azure.com/kylercai/_packaging/MyMaven/maven/v1'
+        url 'https://pkgs.dev.azure.com/kylercai/_packaging/vanke/maven/v1'
         credentials {
             username "AZURE_ARTIFACTS"
             password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "${azureArtifactsGradleAccessToken}"
@@ -19,14 +19,13 @@ dependencies {
    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.12'
    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.5'
    compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.5'
-   compile(group: 'com.example.fabrikam', name: 'TodoDemo', version: '0.0.1-SNAPSHOT')
    runtime 'javax.servlet:jstl:1.2'
 }
 
 publishing {
     repositories {
         maven {
-			url 'https://pkgs.dev.azure.com/kylercai/_packaging/MyMaven/maven/v1'
+			url 'https://pkgs.dev.azure.com/kylercai/_packaging/vanke/maven/v1'
 			credentials {
 				username "AZURE_ARTIFACTS"
 				password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "${azureArtifactsGradleAccessToken}"
