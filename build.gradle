@@ -2,14 +2,14 @@ apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 
 repositories {
-   mavenCentral()
     maven {
-        url 'https://pkgs.dev.azure.com/kylercai/_packaging/MyMaven/maven/v1'
+        url 'https://pkgs.dev.azure.com/kylercai/_packaging/vanke/maven/v1'
         credentials {
             username "AZURE_ARTIFACTS"
             password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "${azureArtifactsGradleAccessToken}"
         }
     }   
+   mavenCentral()
 }
 
 dependencies {
@@ -18,16 +18,14 @@ dependencies {
    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.12'
    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.5'
    compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.5'
-   compile 'org.springframework.boot:spring-boot-gradle-plugin:1.5.13.RELEASE'
    compile(group: 'com.example.fabrikam', name: 'TodoDemo', version: '0.0.1-SNAPSHOT')
    runtime 'javax.servlet:jstl:1.2'
 }
 
 publishing {
-    //配置仓库信息
     repositories {
         maven {
-			url 'https://pkgs.dev.azure.com/kylercai/_packaging/MyMaven/maven/v1'
+			url 'https://pkgs.dev.azure.com/kylercai/_packaging/vanke/maven/v1'
 			credentials {
 				username "AZURE_ARTIFACTS"
 				password System.getenv("AZURE_ARTIFACTS_ENV_ACCESS_TOKEN") ?: "${azureArtifactsGradleAccessToken}"
