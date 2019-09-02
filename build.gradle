@@ -1,10 +1,5 @@
 apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
-apply plugin: 'idea'
-apply plugin: 'java'
-apply plugin: 'maven-publish'
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 repositories {
    mavenCentral()
