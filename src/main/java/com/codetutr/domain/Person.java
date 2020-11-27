@@ -7,7 +7,7 @@ public class Person {
 	private Integer age;
 	
 	public String getName() {
-		return "微软:  " + name;
+		return "Microsoft:  " + name;
 	}
 
 	public void setName(String name) {
