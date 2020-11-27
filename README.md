@@ -1,3 +1,5 @@
+[![Build status](https://dev.azure.com/kylercai/WebToDoDemo/_apis/build/status/Java-Spring-Gradle-CI)](https://dev.azure.com/kylercai/WebToDoDemo/_build/latest?definitionId=20)
+
 本项目演示如何使用spring mvc framework实现API Server，并在Azure Kubernetes Service上部署运行。<br>
 
 使用说明：
