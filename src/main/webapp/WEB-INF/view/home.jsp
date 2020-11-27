@@ -21,9 +21,8 @@
 	<div id="container">
 	
 		<h1>Person Page</h1>
-		<p>This page demonstrates Spring MVC's powerful Ajax functionality. Retrieve a
-		random person, retrieve a person by ID, or save a new person, all without page reload.
-		</p>
+		<!--p>This page demonstrates Spring MVC's powerful Ajax functionality, all without page reload.</p-->
+		<p>Retrieve a random person, retrieve a person by ID, or save a new person.</p>
 		
 		<h2>Random Person Generator</h2>
 		<form id="randomPerson">
